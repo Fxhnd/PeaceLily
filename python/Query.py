@@ -19,7 +19,7 @@ class Main(object):
     def __init__(self, port, opts):
 
         self.arduino = Arduino.Arduino(port)
-        self.filename = None
+        self.filename = opts['file']
         self.opts = opts
         self.graph = Graph.Graph()
 
