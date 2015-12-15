@@ -23,12 +23,12 @@ class Main(object):
         self.filename = opts['file']
         self.opts = opts
         self.graph = Graph.Graph()
+        self.emailer = Emailer(opts['user'], opts['pass'], 'smtp.gmail.com:587')
 
         if opts['file']:
             self.store = DataStore.Datastore(opts['file'])
 
         self.loop()
-        self.emailer = Emailer(opts['user'], opts['pass'], 'smtp.gmail.com:587')
 
 
     def loop(self):
