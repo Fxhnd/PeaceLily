@@ -26,6 +26,8 @@ An Arduino powered plant monitoring system.
 
 ### Wiring Diagram
 
+[Make a picture later]
+
 ### Arduino
 
 Make sure to download the following packages and install them before trying to compile the arduino sketch. Instructions for each driver package can be found in their respective README's.
