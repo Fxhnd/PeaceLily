@@ -55,6 +55,8 @@ class Datastore(object):
                 lux INTEGER \
                 );')
 
+        conn.commit()
+
         return True
 
     def insert_new_data(self, data):
