@@ -6,15 +6,19 @@ An Arduino powered plant monitoring system.
 
 ## Usage
 
-        usage: Query.py [-h] --port PORT [--file FILE] [--time TIME]
-        
-        A straightforward tool to remind you to water your plants!
-        
+       usage: Query.py [-h] --port PORT [--file FILE] [--time TIME] [--user USER]
+                [--pass USER]
+
+        Monitor your plants!
+
         optional arguments:
-          -h, --help   show this help message and exit
-          --port PORT  Serial port connection to arduino
-          --file FILE  Local file to save result data
-          --time TIME  Interval time for polling for new data
+        -h, --help   show this help message and exit
+        --port PORT  Serial port connection to arduino
+        --file FILE  Local file to save result data
+        --time TIME  Interval time for polling for new data
+        --user USER  Username for email account
+        --pass USER  Password for email account
+
           
 ## Installation
 
