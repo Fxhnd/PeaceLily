@@ -10,6 +10,7 @@ import Arduino
 import DataStore
 import Graph
 import Stats
+import Emailer
 
 
 class Main(object):
@@ -23,7 +24,7 @@ class Main(object):
         self.filename = opts['file']
         self.opts = opts
         self.graph = Graph.Graph()
-        self.emailer = Emailer(opts['user'], opts['pass'], 'smtp.gmail.com:587')
+        self.emailer = Emailer.Emailer(opts['user'], opts['pass'], 'smtp.gmail.com:587')
 
         if opts['file']:
             self.store = DataStore.Datastore(opts['file'])
