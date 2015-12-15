@@ -47,7 +47,7 @@ class Main(object):
             if self.store:
                 self.store.insert_new_data(data)
 
-            days_left = Stats.calculate_ttnm(data[4])
+            days_left = Stats.calculate_ttnw(data[4])
 
             if days_left > 0:
                 self.emailer.send_mail(str(days_left) + ' until next watering!')
