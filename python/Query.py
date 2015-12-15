@@ -9,6 +9,7 @@ import time
 import Arduino
 import DataStore
 import Graph
+import Stats
 
 
 class Main(object):
@@ -27,6 +28,7 @@ class Main(object):
             self.store = DataStore.Datastore(opts['file'])
 
         self.loop()
+        self.emailer = Emailer(opts['user'], opts['pass'], 'smtp.gmail.com:587')
 
 
     def loop(self):
@@ -45,15 +47,15 @@ class Main(object):
             if self.store:
                 self.store.insert_new_data(data)
 
+            days_left = Stats.calculate_ttnm(data[4])
+
+            if days_left > 0:
+                self.emailer.send_mail(str(days_left) + ' until next watering!')
+            else:
+                self.emailer.send_mail('Water your plant TODAY!')
+
             self.graph.upload_data(data)
             time.sleep(float(self.opts['time']))
-
-    def save_tuple(self):
-        """
-        Save a tuple to passed filename
-        """
-
-        #TODO implement this
 
 
 if __name__ == '__main__':
@@ -68,6 +70,12 @@ if __name__ == '__main__':
 
     parser.add_argument('--time', dest='time', type=str, \
             help='Interval time for polling for new data')
+
+    parser.add_argument('--user', dest='user', type=str, \
+            help='Username for email account')
+
+    parser.add_argument('--pass', dest='user', type=str, \
+            help='Password for email account')
 
     args = vars(parser.parse_args())
 
