@@ -4,7 +4,7 @@
 @Class Stats
 """
 
-def calculate_ttnm(moisture):
+def calculate_ttnw(m):
     """
     Utility function to calculate days until next watering. Based on a linear
     regression model involving soil moisture and time. Other models do suggest a
@@ -16,4 +16,4 @@ def calculate_ttnm(moisture):
     :rtype float
     """
 
-    return (m - 875) / 0.0725
+    return (m - 875) / 1.44
