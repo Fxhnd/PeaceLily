@@ -75,7 +75,7 @@ if __name__ == '__main__':
     parser.add_argument('--user', dest='user', type=str, \
             help='Username for email account')
 
-    parser.add_argument('--pass', dest='user', type=str, \
+    parser.add_argument('--pass', dest='pass', type=str, \
             help='Password for email account')
 
     args = vars(parser.parse_args())
