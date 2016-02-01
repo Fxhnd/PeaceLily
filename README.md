@@ -1,6 +1,6 @@
 # PeaceLily
 
-![Peace Lily](http://justforyoumom.com/be-inspired/wp-content/uploads/2014/05/may-lily.jpg)
+![Peace Lily](http://images.christmastimeclipart.com/images/2/1263842142136_5/img_1263842142136_51.jpg)
 
 An Arduino powered plant monitoring system. 
 
